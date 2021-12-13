@@ -1,0 +1,21 @@
+@import 'var';
+@import 'mix';
+
+html, body {
+  min-height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: white;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Cera Pro';
+  background-color: #008BB1;
+  height: calc(var(--vh, 1vh) * 100);  
+  max-height: calc(var(--vh, 1vh) * 100);
+  @include mid(){
+    height: 100%;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,116 @@
+@mixin mid{
+  @media screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin land{
+  @media screen and (max-width: 899px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin lg{
+  @media screen and (min-width: 2000px) and (min-height: 1200px) {
+    @content;
+  }
+}
+
+@mixin xlg{
+  @media screen and (min-width: 2600px) and (min-height: 1400px) {
+    @content;
+  }
+}
+
+@mixin android() {
+  @media screen and (min-width: 360px) and (min-height: 590px) {
+    @content;
+  }
+}
+
+@mixin mob(){
+  @media screen and (min-width: 360px) {
+    @content;
+  }
+}
+
+@mixin small-iphone{
+  @media screen and (min-width: 370px) and (min-height: 530px) {
+    @content;
+  }
+}
+
+@mixin iphone(){
+  @media screen and (min-width: 400px) and (min-height: 700px) {
+    @content;
+  }
+}
+
+@mixin hCenter(){
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin vCenter(){
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin aCenter(){
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.--text{
+  position: relative;
+  background: linear-gradient(180deg,#fff 26.47%,#ffe660 50.22%,#ff8d23 65.27%,#ffe660 81.83%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+$flex-justify : center, flex-end, flex-start, space-between, space-evenly, space-around, stretch;
+
+$flex-align : center, flex-end, flex-start;
+
+$width : auto, min-content, max-content, fit-content, unset;
+
+.pointer{
+  cursor:pointer;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+@each $prop in $flex-justify{
+  .justify-#{$prop}{
+    justify-content: $prop;
+  }
+}
+
+@each $prop in $flex-align{
+  .align-#{$prop}{
+    align-items: $prop;
+  }
+}
+
+@for $i from 10 through 100 {
+  @if ($i % 5) == 0 {
+    .w-#{$i}{
+      width: $i * 1%;
+    }
+  }
+}
+
+@each $prop in $width{
+  .w-#{$prop}{
+    width: $prop;
+  }
+}
